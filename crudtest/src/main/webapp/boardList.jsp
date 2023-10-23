@@ -2,6 +2,11 @@
 <%@ page import ="java.sql.*" %>
 <%@ page import = "java.util.ArrayList" %>
 <%@ page import = "vo.Board" %>
+<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,15 +54,14 @@
 	// Model Layer
 %>
 	<!-- View Layer -->
-	<ul>
-		<li><a href="<%=request.getContextPath()%>/home.jsp">홈으로</a></li>
-		<li><a href="<%=request.getContextPath()%>/empList.jsp">직원관리</a></li>
-		<li><a href="<%=request.getContextPath()%>/teamList.jsp">팀관리</a></li>
-		<li><a href="<%=request.getContextPath()%>/studentList.jsp">학생관리</a></li>
-		<li><a href="<%=request.getContextPath()%>/boardList.jsp">게시판관리</a></li>
-	</ul>
-	
-	<h1>게시판</h1>
+	<h1>메뉴</h1>
+	<!-- 메뉴 네비게이션 -->
+		<a href="<%=request.getContextPath()%>/home.jsp" class="btn btn-primary">홈으로</a>
+		<a href="<%=request.getContextPath()%>/empList.jsp" class="btn btn-primary">직원관리</a>
+		<a href="<%=request.getContextPath()%>/teamList.jsp" class="btn btn-primary">팀관리</a>
+		<a href="<%=request.getContextPath()%>/studentList.jsp" class="btn btn-primary">학생관리</a>
+		<a href="<%=request.getContextPath()%>/boardList.jsp" class="btn btn-primary">게시판관리</a>
+	<h2>게시판</h2>
 	<div>
 		<a href="<%=request.getContextPath()%>/addBoardForm.jsp">글입력</a>
 	</div>
