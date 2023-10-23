@@ -3,6 +3,7 @@
 <%@ page import ="java.sql.Connection" %>
 <%@ page import ="java.sql.DriverManager" %>
 <%@ page import ="java.sql.PreparedStatement" %>
+<%@ page import ="vo.Student" %>
 <%
 	int studentNo = Integer.parseInt(request.getParameter("studentNo"));
 	String studentName = request.getParameter("studentName");
@@ -18,12 +19,12 @@
 	
 	Connection conn = DriverManager.getConnection(url, dbuser, dbpw);
 	
-	String sql = "UPDATE student SET student_no = ?, student_name = ?, student_birth = ?, createdate = NOW(), updatedate = NOW() WHERE student_no = ?";
+	String sql = "UPDATE student SET student_no = ?, student_name = ?,student_gender, student_birth = ?, createdate = NOW(), updatedate = NOW() WHERE student_no = ?";
 	PreparedStatement stmt = conn.prepareStatement(sql);
 	stmt.setInt(1, studentNo);
 	stmt.setString(2, studentName);
-	stmt.setString(3, createdate);
-	stmt.setString(4, updatedate);
+	stmt.setString(3, studentBirth);
+	stmt.setInt(4, studentNo);
 	
 	
 	int row = stmt.executeUpdate();
